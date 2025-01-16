@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { Box, Divider } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
@@ -28,6 +28,9 @@ const Navbar: React.FC = () => {
             lg: "100px",
             xl: "120px",
           },
+          marginBottom: "-1.8px",
+          position: "relative",
+          zIndex: "100",
         }}
       >
         <Box
@@ -127,7 +130,15 @@ const Navbar: React.FC = () => {
         </Box>
 
         {/* Drawer Navigation */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, p: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            p: 2,
+            textAlign: "right",
+          }}
+        >
           <Typography
             sx={{
               color: localColorTheme.white,
@@ -138,6 +149,13 @@ const Navbar: React.FC = () => {
           >
             Home
           </Typography>
+          <Divider
+            sx={{
+              width: "100%",
+              backgroundColor: localColorTheme.white,
+            }}
+          />
+
           <Typography
             sx={{
               color: localColorTheme.white,
@@ -148,6 +166,12 @@ const Navbar: React.FC = () => {
           >
             About
           </Typography>
+          <Divider
+            sx={{
+              width: "100%",
+              backgroundColor: localColorTheme.white,
+            }}
+          />
           <Typography
             sx={{
               color: localColorTheme.white,
@@ -158,6 +182,36 @@ const Navbar: React.FC = () => {
           >
             Contact
           </Typography>
+          <Divider
+            sx={{
+              width: "100%",
+              backgroundColor: localColorTheme.white,
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              alignItems: "center",
+              margin: "auto",
+            }}
+          >
+            <Image
+              style={{ width: "24px", height: "24px", objectFit: "contain" }}
+              src={svgs.Facebook}
+              alt="facebook"
+            />
+            <Image
+              style={{ width: "24px", height: "24px", objectFit: "contain" }}
+              src={svgs.Twitter}
+              alt="facebook"
+            />
+            <Image
+              style={{ width: "24px", height: "24px", objectFit: "contain" }}
+              src={svgs.Instagram}
+              alt="facebook"
+            />
+          </Box>
         </Box>
       </Drawer>
     </>

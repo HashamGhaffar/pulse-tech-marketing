@@ -1,5 +1,5 @@
-import HeroHome from "./home/_sections/HeroHome";
+import HomePage from "./home/page";
 
 export default function Home() {
-  return <HeroHome />;
+  return <HomePage />;
 }

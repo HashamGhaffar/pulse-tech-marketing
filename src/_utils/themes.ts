@@ -3,6 +3,10 @@ export const localColorTheme = {
   aquaGlow: "#30CDCF",
   white: "#ffffff",
   whiteTransparent: "#FFFFFF80",
+  aquaBright: "#30CFD0",
+  deepPurple: "#330867",
+  fieryRose: "#F5576C", // Bold and energetic red-pink shade
+  softLavender: "#F093FB", // Soft lavender-purple hue
 };
 
 export const localFontSize = {

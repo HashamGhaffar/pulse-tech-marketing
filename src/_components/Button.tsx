@@ -1,24 +1,37 @@
 import React from "react";
 import MUIButton from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";
-// import { fontSize, colorTheme } from "@/_utils/themes";
+import { localFontSize } from "@/_utils/themes";
 
 interface ButtonProps {
   text: string;
   customStyles?: SxProps<Theme>;
+  color1?: string;
+  color2?: string;
 }
 
-// prev function name Button
-const CustomButton: React.FC<ButtonProps> = ({ text, customStyles }) => {
+const CustomButton: React.FC<ButtonProps> = ({
+  text,
+  customStyles,
+  color1,
+  color2,
+}) => {
   return (
     <MUIButton
       sx={{
-        padding: { xs: "15px 30px", lg: "20px 40px" },
-        borderRadius: "12px",
-        // backgroundColor: colorTheme.red,
-        // color: colorTheme.white,
-        textTransform: "none",
-        // fontSize: fontSize.p3,
+        padding: { xs: "12px 30px", md: "14px 25px", lg: "16px 30px" },
+        borderRadius: "10px",
+        textTransform: "capitalize",
+        fontWeight: "700",
+        fontSize: localFontSize.p4,
+        background: `linear-gradient(90deg, ${color1 || "#74EBD5"} 0%, ${
+          color2 || "#9FACE6"
+        } 100%)`,
+        color: "#ffffff",
+        transition: "all 0.5s ease-in",
+        "&:hover": {
+          opacity: 0.8,
+        },
         ...customStyles,
       }}
     >
