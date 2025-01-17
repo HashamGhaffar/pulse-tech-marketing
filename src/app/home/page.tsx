@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import HeroHome from "./_sections/HeroHome";
 import EmpowerYourBrand from "./_sections/EmpowerYourBrand";
 import OurService from "./_sections/OurService";
+import WhyUs from "./_sections/WhyUs";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         <HeroHome />
         <EmpowerYourBrand />
         <OurService />
+        <WhyUs />
       </Box>
     </>
   );

@@ -5,8 +5,6 @@ import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
 import CustomAccordion from "../_components/CustomAccordion";
-// import pngs from "@/_assets/pngs";
-// import Image from "next/image";
 
 const OurService: React.FC = () => {
   return (

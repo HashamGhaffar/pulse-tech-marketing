@@ -11,6 +11,8 @@ export const localColorTheme = {
   royalViolet: "#3D0867",
   mistBlue: "#9FACE6",
   mintGreen: "#74EBD5",
+  obsidianPurple: "#3C0968",
+  shadowAmethyst: "#680099",
 };
 
 export const localFontSize = {
