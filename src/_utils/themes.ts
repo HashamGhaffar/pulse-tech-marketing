@@ -8,6 +8,9 @@ export const localColorTheme = {
   fieryRose: "#F5576C",
   softLavender: "#F093FB",
   midnightBlue: "#1A2283",
+  royalViolet: "#3D0867",
+  mistBlue: "#9FACE6",
+  mintGreen: "#74EBD5",
 };
 
 export const localFontSize = {
