@@ -22,6 +22,7 @@ const CustomButton: React.FC<ButtonProps> = ({
         padding: { xs: "12px 30px", md: "14px 25px", lg: "16px 30px" },
         borderRadius: "10px",
         textTransform: "capitalize",
+        textWrap: "nowrap",
         fontWeight: "700",
         fontSize: localFontSize.p4,
         background: `linear-gradient(90deg, ${color1 || "#74EBD5"} 0%, ${

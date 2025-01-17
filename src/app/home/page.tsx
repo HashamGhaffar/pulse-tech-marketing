@@ -5,6 +5,7 @@ import HeroHome from "./_sections/HeroHome";
 import EmpowerYourBrand from "./_sections/EmpowerYourBrand";
 import OurService from "./_sections/OurService";
 import WhyUs from "./_sections/WhyUs";
+import OurProjects from "./_sections/OurProjects";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         <EmpowerYourBrand />
         <OurService />
         <WhyUs />
+        <OurProjects />
       </Box>
     </>
   );
