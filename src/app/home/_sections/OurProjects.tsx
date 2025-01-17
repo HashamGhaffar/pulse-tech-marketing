@@ -121,7 +121,7 @@ const OurProjects: React.FC = () => {
                     "Development",
                     "Social Media Marketing",
                   ]}
-                />{" "}
+                />
               </Grid>
             </Grid>
           </Box>
