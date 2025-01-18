@@ -66,8 +66,8 @@ const OurProjects: React.FC = () => {
             >
               <Grid sx={{ margin: "auto" }} item xs={12} sm={8} md={5.5}>
                 <ProjectCard
-                  title="Sabir’s Grill"
-                  description="I am proud to showcase my work on Sabir’s ("
+                  title="Sabir&#39;s Grill"
+                  description="I am proud to showcase my work on Sabir&#39;s ("
                   description2="), a project where I brought together creativity, technical expertise, and strategic marketing."
                   imageUrl={pngs.SabirsProject}
                   projectLink="https://sabirs.co.uk/"
@@ -80,10 +80,10 @@ const OurProjects: React.FC = () => {
                   ]}
                 />
                 <ProjectCard
-                  title="Saif’s Boxing & Fitness"
-                  description="We are proud to have partnered with Saif’s Boxing Gym on a complete digital overhaul, showcasing our expertise in design, development, and social media marketing."
-                  description2={""}
-                  projectLink={""}
+                  title="Saif&#39;s Boxing & Fitness"
+                  description="We are proud to have partnered with Saif&#39;s Boxing Gym on a complete digital overhaul, showcasing our expertise in design, development, and social media marketing."
+                  description2=""
+                  projectLink=""
                   imageUrl={pngs.SaifProject}
                   tags={[
                     "Food",
@@ -96,10 +96,10 @@ const OurProjects: React.FC = () => {
               </Grid>
               <Grid sx={{ margin: "auto" }} item xs={12} sm={8} md={5.5}>
                 <ProjectCard
-                  title="Saif’s Boxing & Fitness"
-                  description="We are proud to have partnered with Saif’s Boxing Gym on a complete digital overhaul, showcasing our expertise in design, development, and social media marketing."
-                  description2={""}
-                  projectLink={""}
+                  title="Saif&#39;s Boxing & Fitness"
+                  description="We are proud to have partnered with Saif&#39;s Boxing Gym on a complete digital overhaul, showcasing our expertise in design, development, and social media marketing."
+                  description2=""
+                  projectLink=""
                   imageUrl={pngs.SaifProject}
                   tags={[
                     "Food",
@@ -110,8 +110,8 @@ const OurProjects: React.FC = () => {
                   ]}
                 />
                 <ProjectCard
-                  title="Sabir’s Grill"
-                  description="I am proud to showcase my work on Sabir’s ("
+                  title="Sabir&#39;s Grill"
+                  description="I am proud to showcase my work on Sabir&#39;s ("
                   description2="), a project where I brought together creativity, technical expertise, and strategic marketing."
                   imageUrl={pngs.SabirsProject}
                   projectLink="https://sabirs.co.uk/"
