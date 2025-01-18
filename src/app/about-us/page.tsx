@@ -2,11 +2,12 @@
 import { Box } from "@mui/material";
 import Navbar from "@/_components/Navbar";
 import Hero from "@/_components/Hero";
-// import Footer from "@/_components/Footer";
 import pngs from "@/_assets/pngs";
 import Marquee from "./_sections/Marquee";
 import MarketingExpertise from "./_sections/MarketingExpertise";
 import SocialMediaGroth from "./_sections/SocialMediaGroth";
+import CreativeMinds from "./_sections/CreativeMinds";
+import Footer from "@/_components/Footer";
 
 export default function AboutUs() {
   return (
@@ -26,7 +27,8 @@ export default function AboutUs() {
         <Marquee />
         <MarketingExpertise />
         <SocialMediaGroth />
-        {/* <Footer /> */}
+        <CreativeMinds />
+        <Footer />
       </Box>
     </>
   );

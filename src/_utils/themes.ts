@@ -19,6 +19,8 @@ export const localColorTheme = {
   twilightIndigo: "#33146D",
   silverMist: "#C9C9C9",
   cosmicNavy: "#1B2182",
+  royalOrchid: "#670199",
+  velvetBloom: "#670846",
 };
 
 export const localFontSize = {

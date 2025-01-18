@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
               <Typography
                 sx={{
                   fontWeight: "700",
-                  fontSize: localFontSize.p4,
+                  fontSize: localFontSize.h4,
                   fontFamily: "Montserrat, sans-serif",
                 }}
               >
