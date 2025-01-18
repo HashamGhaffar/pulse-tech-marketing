@@ -9,13 +9,31 @@ const Footer: React.FC = () => {
   return (
     <Box
       sx={{
-        padding: "60px 20px",
+        // padding: {
+        //   xs: "0 20px 0 20px",
+        //   sm: "0 40px 0 40px",
+        //   md: "0 60px 0 60px",
+        //   lg: "0 100px 0 100px",
+        //   xl: "0 120px 0 120px",
+        // },
         background: `linear-gradient(180deg, ${localColorTheme.velvetBerry} 0%, ${localColorTheme.crimsonBlush} 100%)`,
         color: "#FFFFFF",
         textAlign: "center",
       }}
     >
-      <Box sx={{ position: "relative" }}>
+      <Box
+        sx={{
+          // paddingTop: {
+          //   xs: "60px",
+          //   sm: "80px",
+          //   md: "90px",
+          //   lg: "120px",
+          //   xl: "140px",
+          // },
+
+          position: "relative",
+        }}
+      >
         {/* Background LOGO */}
         {/* <Typography
           sx={{
@@ -34,15 +52,48 @@ const Footer: React.FC = () => {
         </Typography> */}
 
         {/* Footer Content */}
-        <Box sx={{ position: "relative", zIndex: "1" }}>
+        <Box
+          sx={{
+            position: "relative",
+            zIndex: "1",
+            width: "100%",
+            padding: {
+              xs: "0 20px 0 20px",
+              sm: "0 40px 0 40px",
+              md: "0 60px 0 60px",
+              lg: "0 100px 0 100px",
+              xl: "100px 120px 0 120px",
+            },
+
+            maxWidth: "1440px",
+            margin: "auto",
+            borderTop: {
+              xs: `1px solid ${localColorTheme.whiteTransparent}`,
+              md: "0px",
+              xl: `1px solid ${localColorTheme.whiteTransparent}`,
+              // md: "none",
+            },
+          }}
+        >
           {/* Quick Links */}
           <Box
             sx={{
+              paddingTop: {
+                xs: "60px",
+                sm: "80px",
+                md: "90px",
+                lg: "100px",
+                xl: "0px",
+              },
               display: "flex",
               justifyContent: "center",
               gap: { xs: "50px", md: "80px" },
               alignItems: "center",
               flexDirection: "column",
+              borderTop: {
+                md: `1px solid ${localColorTheme.whiteTransparent}`,
+                xl: "none",
+              },
             }}
           >
             <Box
@@ -130,6 +181,39 @@ const Footer: React.FC = () => {
               </Box>
             </Box>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            height: { xs: "100px", md: "160px" },
+            width: "100%",
+            marginTop: {
+              xs: "60px",
+              sm: "80px",
+              md: "90px",
+              lg: "100px",
+              xl: "100px",
+            },
+            backgroundImage: "url(./bgFooter.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: { xs: "center", xl: "top" },
+            backgroundSize: "cover",
+            position: "relative",
+          }}
+        >
+          <Typography
+            sx={{
+              color: localColorTheme.white,
+              fontSize: localFontSize.p4,
+              position: "absolute",
+              bottom: { xs: "15px", sm: "20px", md: "38px", xl: "30px" },
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "100%",
+              paddingX: "20px",
+            }}
+          >
+            PulseTechnologySolutions © Copyright 2020, Inc. All rights reserved
+          </Typography>
         </Box>
       </Box>
     </Box>
