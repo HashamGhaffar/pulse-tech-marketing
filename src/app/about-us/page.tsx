@@ -6,6 +6,7 @@ import Hero from "@/_components/Hero";
 import pngs from "@/_assets/pngs";
 import Marquee from "./_sections/Marquee";
 import MarketingExpertise from "./_sections/MarketingExpertise";
+import SocialMediaGroth from "./_sections/SocialMediaGroth";
 
 export default function AboutUs() {
   return (
@@ -24,6 +25,7 @@ export default function AboutUs() {
         />
         <Marquee />
         <MarketingExpertise />
+        <SocialMediaGroth />
         {/* <Footer /> */}
       </Box>
     </>
