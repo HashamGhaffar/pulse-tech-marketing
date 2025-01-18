@@ -5,6 +5,7 @@ import Hero from "@/_components/Hero";
 // import Footer from "@/_components/Footer";
 import pngs from "@/_assets/pngs";
 import Marquee from "./_sections/Marquee";
+import MarketingExpertise from "./_sections/MarketingExpertise";
 
 export default function AboutUs() {
   return (
@@ -22,6 +23,7 @@ export default function AboutUs() {
           showAboutButton={true}
         />
         <Marquee />
+        <MarketingExpertise />
         {/* <Footer /> */}
       </Box>
     </>
