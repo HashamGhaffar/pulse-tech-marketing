@@ -17,6 +17,7 @@ export const localColorTheme = {
   velvetBerry: "#670847",
   crimsonBlush: "#67082A",
   twilightIndigo: "#33146D",
+  silverMist: "#C9C9C9",
 };
 
 export const localFontSize = {

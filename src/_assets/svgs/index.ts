@@ -8,6 +8,14 @@ import Google from "./marquee/google.svg";
 import Logitech from "./marquee/logitech.svg";
 import Slack from "./marquee/slack.svg";
 
+// MarketingExpertise
+import ContentWriting from "./marketingExpertise/contentWriting.svg";
+import Marketing from "./marketingExpertise/marketing.svg";
+import PPC from "./marketingExpertise/ppc.svg";
+import SEO from "./marketingExpertise/seo.svg";
+import Video from "./marketingExpertise/video.svg";
+import WebDesign from "./marketingExpertise/webDesign.svg";
+
 const svgs = {
   Hamburger,
   Facebook,
@@ -18,6 +26,13 @@ const svgs = {
   Google,
   Logitech,
   Slack,
+  // MarketingExpertise
+  ContentWriting,
+  Marketing,
+  PPC,
+  SEO,
+  Video,
+  WebDesign,
 };
 
 export default svgs;
