@@ -75,13 +75,13 @@ const OurService: React.FC = () => {
 on search engines, driving organic traffic and improving visibility."
               />
               <CustomAccordion
-                number="01"
+                number="02"
                 title="Web Application Development"
                 content="A Website is an extension of yourself and we can help you to express it properly. Your website is
 your number one marketing asset because we live in a digital age."
               />
               <CustomAccordion
-                number="01"
+                number="03"
                 title="Custom Web Design & Development"
                 content="Create visually appealing, responsive websites tailored to your brand. Our custom solutions ensure
 a user-friendly experience that drives engagement and growth."

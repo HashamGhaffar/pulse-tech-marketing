@@ -19,7 +19,7 @@ const OurProjects: React.FC = () => {
             lg: "120px 100px",
             xl: "140px 120px",
           },
-          background: `linear-gradient(180deg, ${localColorTheme.shadowAmethyst} 18.67%, ${localColorTheme.obsidianPurple} 100%)`,
+          background: `linear-gradient(180deg, ${localColorTheme.shadowAmethyst} 18.67%, ${localColorTheme.royalPurple} 100%)`,
         }}
       >
         <Box sx={{ maxWidth: "1440px", margin: "auto" }}>
