@@ -1,21 +1,31 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
+import { useRouter } from "next/navigation";
 
 const Footer: React.FC = () => {
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const scrollToProjects = () => {
+    if (isClient) {
+      const target = document.getElementById("ourProjects");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <Box
       sx={{
-        // padding: {
-        //   xs: "0 20px 0 20px",
-        //   sm: "0 40px 0 40px",
-        //   md: "0 60px 0 60px",
-        //   lg: "0 100px 0 100px",
-        //   xl: "0 120px 0 120px",
-        // },
         background: `linear-gradient(180deg, ${localColorTheme.velvetBerry} 0%, ${localColorTheme.crimsonBlush} 100%)`,
         color: "#FFFFFF",
         textAlign: "center",
@@ -23,35 +33,9 @@ const Footer: React.FC = () => {
     >
       <Box
         sx={{
-          // paddingTop: {
-          //   xs: "60px",
-          //   sm: "80px",
-          //   md: "90px",
-          //   lg: "120px",
-          //   xl: "140px",
-          // },
-
           position: "relative",
         }}
       >
-        {/* Background LOGO */}
-        {/* <Typography
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            fontSize: { xs: "100px", md: "200px" },
-            fontWeight: "bold",
-            color: "rgba(255, 255, 255, 0.05)",
-            zIndex: 0,
-            userSelect: "none",
-          }}
-        >
-          LOGO
-        </Typography> */}
-
-        {/* Footer Content */}
         <Box
           sx={{
             position: "relative",
@@ -64,18 +48,15 @@ const Footer: React.FC = () => {
               lg: "0 100px 0 100px",
               xl: "100px 120px 0 120px",
             },
-
             maxWidth: "1440px",
             margin: "auto",
             borderTop: {
               xs: `1px solid ${localColorTheme.whiteTransparent}`,
               md: "0px",
               xl: `1px solid ${localColorTheme.whiteTransparent}`,
-              // md: "none",
             },
           }}
         >
-          {/* Quick Links */}
           <Box
             sx={{
               paddingTop: {
@@ -115,7 +96,6 @@ const Footer: React.FC = () => {
                 Quick Links
               </Typography>
 
-              {/* Navigation Links */}
               <Box
                 sx={{
                   display: "flex",
@@ -124,14 +104,22 @@ const Footer: React.FC = () => {
                   flexWrap: "wrap",
                   fontSize: localFontSize.h4,
                   color: localColorTheme.whiteTransparent,
+                  "& > *": {
+                    cursor: "pointer",
+                  },
                 }}
               >
-                <Typography>Home</Typography>
-                <Typography>About</Typography>
-                <Typography>Contact</Typography>
-                <Typography>Projects</Typography>
+                <Typography onClick={() => router.push("/")}>Home</Typography>
+                <Typography onClick={() => router.push("/about-us")}>
+                  About
+                </Typography>
+                <Typography onClick={() => router.push("/contact-us")}>
+                  Contact
+                </Typography>
+                <Typography onClick={scrollToProjects}>Projects</Typography>
               </Box>
             </Box>
+
             <Box
               sx={{
                 display: "flex",
@@ -150,7 +138,6 @@ const Footer: React.FC = () => {
               >
                 Contact Us
               </Typography>
-
               {/* Navigation Links */}
               <Box
                 sx={{
@@ -182,6 +169,7 @@ const Footer: React.FC = () => {
             </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             height: { xs: "100px", md: "160px" },

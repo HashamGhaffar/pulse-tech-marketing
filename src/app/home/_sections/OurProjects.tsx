@@ -10,6 +10,7 @@ const OurProjects: React.FC = () => {
   return (
     <>
       <Box
+        id="ourProjects"
         sx={{
           padding: {
             xs: "60px 20px",

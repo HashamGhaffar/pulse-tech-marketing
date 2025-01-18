@@ -7,8 +7,10 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import { useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
@@ -45,6 +47,7 @@ const Navbar: React.FC = () => {
           }}
         >
           <Typography
+            onClick={() => router.push("/")}
             sx={{
               fontWeight: "700",
               color: localColorTheme.white,
@@ -57,6 +60,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4 }}>
             <Typography
+              onClick={() => router.push("/")}
               sx={{
                 color: localColorTheme.whiteTransparent,
                 fontSize: localFontSize.p4,
@@ -66,6 +70,7 @@ const Navbar: React.FC = () => {
               Home
             </Typography>
             <Typography
+              onClick={() => router.push("/about-us")}
               sx={{
                 color: localColorTheme.whiteTransparent,
                 fontSize: localFontSize.p4,
@@ -75,6 +80,7 @@ const Navbar: React.FC = () => {
               About
             </Typography>
             <Typography
+              onClick={() => router.push("/contact-us")}
               sx={{
                 color: localColorTheme.whiteTransparent,
                 fontSize: localFontSize.p4,
@@ -140,12 +146,13 @@ const Navbar: React.FC = () => {
           }}
         >
           <Typography
+            onClick={() => router.push("/")}
             sx={{
               color: localColorTheme.white,
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => toggleDrawer(false)}
+            // onClick={() => toggleDrawer(false)}
           >
             Home
           </Typography>
@@ -157,12 +164,12 @@ const Navbar: React.FC = () => {
           />
 
           <Typography
+            onClick={() => router.push("/about-us")}
             sx={{
               color: localColorTheme.white,
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => toggleDrawer(false)}
           >
             About
           </Typography>
@@ -173,12 +180,12 @@ const Navbar: React.FC = () => {
             }}
           />
           <Typography
+            onClick={() => router.push("/contact-us")}
             sx={{
               color: localColorTheme.white,
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => toggleDrawer(false)}
           >
             Contact
           </Typography>
