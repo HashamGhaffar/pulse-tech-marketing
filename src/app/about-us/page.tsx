@@ -2,8 +2,9 @@
 import { Box } from "@mui/material";
 import Navbar from "@/_components/Navbar";
 import Hero from "@/_components/Hero";
-import Footer from "@/_components/Footer";
+// import Footer from "@/_components/Footer";
 import pngs from "@/_assets/pngs";
+import Marquee from "./_sections/Marquee";
 
 export default function AboutUs() {
   return (
@@ -20,7 +21,8 @@ export default function AboutUs() {
           imageAlt="Marketing Strategy"
           showAboutButton={true}
         />
-        <Footer />
+        <Marquee />
+        {/* <Footer /> */}
       </Box>
     </>
   );
