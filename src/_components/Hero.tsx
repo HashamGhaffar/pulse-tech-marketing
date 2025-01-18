@@ -5,10 +5,29 @@ import Grid from "@mui/material/Grid";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
-import pngs from "@/_assets/pngs";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const HeroHome: React.FC = () => {
+interface HeroProps {
+  aboutButtonText: string;
+  headingText: string;
+  highlightedText: string;
+  descriptionText: string;
+  ctaButtonText: string;
+  imageSrc: StaticImageData;
+  imageAlt: string;
+  showAboutButton?: boolean;
+}
+
+const Hero: React.FC<HeroProps> = ({
+  aboutButtonText,
+  headingText,
+  highlightedText,
+  descriptionText,
+  ctaButtonText,
+  imageSrc,
+  imageAlt,
+  showAboutButton = false,
+}) => {
   return (
     <>
       <Box
@@ -26,6 +45,29 @@ const HeroHome: React.FC = () => {
         <Box sx={{ maxWidth: "1440px", margin: "auto" }}>
           <Grid container spacing={2} alignItems="center">
             <Grid item xs={12} md={7}>
+              {/* ✅ Conditionally render About Button */}
+              {showAboutButton && (
+                <Box
+                  sx={{
+                    width: "fit-content",
+                    paddingBottom: { xs: "20px", md: "0px" },
+                  }}
+                >
+                  <CustomButton
+                    text={aboutButtonText}
+                    color1="#F093FB"
+                    color2="#F5576C"
+                    customStyles={{
+                      padding: {
+                        xs: "10px 18px",
+                        md: "10px 20px",
+                        lg: "10px 25px",
+                      },
+                    }}
+                  />
+                </Box>
+              )}
+
               <Box
                 sx={{
                   textAlign: { xs: "center", md: "left" },
@@ -43,7 +85,7 @@ const HeroHome: React.FC = () => {
                     fontFamily: "Montserrat, sans-serif",
                   }}
                 >
-                  Grow Your Brand{" "}
+                  {headingText}{" "}
                   <span
                     style={{
                       background: `linear-gradient(90deg, ${localColorTheme.softLavender}  0%, ${localColorTheme.fieryRose} 100%)`,
@@ -54,21 +96,21 @@ const HeroHome: React.FC = () => {
                       lineHeight: "inherit",
                     }}
                   >
-                    Faster
+                    {highlightedText}
                   </span>
                 </Typography>
                 <Typography
                   sx={{
                     color: localColorTheme.whiteTransparent,
                     fontSize: localFontSize.p4,
+                    // width: { lg: "80%" },
+                    paddingRight: { lg: "40px" },
                   }}
                 >
-                  Unlock your business&apos;s full potential with tailored
-                  digital marketing strategies designed to boost visibility,
-                  drive engagement, and maximize ROI.
+                  {descriptionText}
                 </Typography>
                 <Box>
-                  <CustomButton text="Let's Talk" />
+                  <CustomButton text={ctaButtonText} />
                 </Box>
               </Box>
             </Grid>
@@ -80,8 +122,8 @@ const HeroHome: React.FC = () => {
                     height: "100%",
                     objectFit: "contain",
                   }}
-                  src={pngs.brandGroth}
-                  alt="brand groth"
+                  src={imageSrc}
+                  alt={imageAlt}
                 />
               </Box>
             </Grid>
@@ -92,4 +134,4 @@ const HeroHome: React.FC = () => {
   );
 };
 
-export default HeroHome;
+export default Hero;

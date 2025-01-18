@@ -4,6 +4,7 @@ import DigitalMarketing from "./digitalMarketing.png";
 import SabirsProject from "./sabirsProject.png";
 import SaifProject from "./saifProject.png";
 import GetInTouch from "./getInTouch.png";
+import MarketingAgency from "./marketingAgency.png";
 
 const pngs = {
   brandGroth,
@@ -12,6 +13,7 @@ const pngs = {
   SabirsProject,
   SaifProject,
   GetInTouch,
+  MarketingAgency,
 };
 
 export default pngs;
