@@ -7,6 +7,7 @@ import OurService from "./_sections/OurService";
 import WhyUs from "./_sections/WhyUs";
 import OurProjects from "./_sections/OurProjects";
 import GetInTouch from "@/_components/GetInTouch";
+import Footer from "@/_components/Footer";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
         <WhyUs />
         <OurProjects />
         <GetInTouch />
+        <Footer />
       </Box>
     </>
   );

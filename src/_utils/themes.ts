@@ -15,7 +15,10 @@ export const localColorTheme = {
   shadowAmethyst: "#680099",
   plumMystic: "#680965",
   velvetBerry: "#670847",
+  crimsonBlush: "#67082A",
 };
+
+// background: linear-gradient(180deg, #670847 0%, #67082A 100%);
 
 export const localFontSize = {
   // Headings
