@@ -4,10 +4,10 @@ import { Box, Typography } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const Footer: React.FC = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -109,11 +109,19 @@ const Footer: React.FC = () => {
                   },
                 }}
               >
-                <Typography onClick={() => router.push("/")}>Home</Typography>
-                <Typography onClick={() => router.push("/about-us")}>
+                <Typography
+                // onClick={() => router.push("/")}
+                >
+                  Home
+                </Typography>
+                <Typography
+                // onClick={() => router.push("/about-us")}
+                >
                   About
                 </Typography>
-                <Typography onClick={() => router.push("/contact-us")}>
+                <Typography
+                // onClick={() => router.push("/contact-us")}
+                >
                   Contact
                 </Typography>
                 <Typography onClick={scrollToProjects}>Projects</Typography>
