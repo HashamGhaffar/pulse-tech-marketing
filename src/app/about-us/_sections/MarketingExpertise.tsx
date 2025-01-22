@@ -6,8 +6,16 @@ import { localColorTheme, localFontSize } from "@/_utils/themes";
 import svgs from "@/_assets/svgs";
 import CardMarketingExpertise from "../_components/CardMarketingExpertiseProps";
 import { Typography } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const MarketingExpertise: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Box
@@ -65,6 +73,8 @@ const MarketingExpertise: React.FC = () => {
                 md={6}
               >
                 <Box
+                  data-aos="fade-left"
+                  data-aos-duration="500"
                   sx={{
                     display: "flex",
                     flexDirection: "column",

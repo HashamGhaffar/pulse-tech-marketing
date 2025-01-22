@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface CardMarketingExpertiseProps {
   imageSrc: StaticImageData;
@@ -15,8 +17,15 @@ const CardMarketingExpertise: React.FC<CardMarketingExpertiseProps> = ({
   imageAlt,
   title,
 }) => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         background: `linear-gradient(90deg, ${localColorTheme.mintGreen} 0%, ${localColorTheme.mistBlue} 100%)`,
         width: "100%",

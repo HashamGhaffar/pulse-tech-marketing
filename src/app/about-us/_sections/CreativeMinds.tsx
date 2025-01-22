@@ -1,13 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import pngs from "@/_assets/pngs";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CreativeMinds: React.FC = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Box
@@ -34,7 +40,11 @@ const CreativeMinds: React.FC = () => {
               <Box>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",
@@ -47,7 +57,11 @@ const CreativeMinds: React.FC = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",
@@ -69,6 +83,8 @@ const CreativeMinds: React.FC = () => {
               md={6}
             >
               <Box
+                data-aos="fade-left"
+                data-aos-duration="500"
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -111,7 +127,11 @@ const CreativeMinds: React.FC = () => {
               <Box>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",
@@ -124,7 +144,11 @@ const CreativeMinds: React.FC = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",
@@ -148,7 +172,11 @@ const CreativeMinds: React.FC = () => {
               <Box>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",
@@ -161,7 +189,11 @@ const CreativeMinds: React.FC = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Box sx={{ maxwidth: "300px", width: "100%" }}>
+                    <Box
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      sx={{ maxwidth: "300px", width: "100%" }}
+                    >
                       <Image
                         style={{
                           width: "100%",

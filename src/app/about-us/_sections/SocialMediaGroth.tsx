@@ -1,12 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SocialMediaGroth: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Box
@@ -28,7 +35,14 @@ const SocialMediaGroth: React.FC = () => {
             container
             spacing={2}
           >
-            <Grid item xs={12} md={6} xl={5}>
+            <Grid
+              data-aos="fade-right"
+              data-aos-duration="500"
+              item
+              xs={12}
+              md={6}
+              xl={5}
+            >
               <Typography
                 sx={{
                   fontWeight: "700",
@@ -63,7 +77,14 @@ const SocialMediaGroth: React.FC = () => {
                 content
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6} xl={7}>
+            <Grid
+              data-aos="fade-left"
+              data-aos-duration="500"
+              item
+              xs={12}
+              md={6}
+              xl={7}
+            >
               <Box sx={{ maxWidth: "670px" }}>
                 <Image
                   style={{
