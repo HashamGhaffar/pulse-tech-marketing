@@ -7,9 +7,9 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import { usePathname } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import { useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
   useEffect(() => {
@@ -17,12 +17,17 @@ const Navbar: React.FC = () => {
     AOS.refresh();
   }, []);
 
-  // const router = useRouter();
+  const pathname = usePathname();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = (open: boolean) => {
     setIsDrawerOpen(open);
   };
+
+  const getColor = (route: string) =>
+    pathname === route
+      ? localColorTheme.fieryRose
+      : localColorTheme.whiteTransparent;
 
   return (
     <>
@@ -56,7 +61,6 @@ const Navbar: React.FC = () => {
           }}
         >
           <Typography
-            // onClick={() => router.push("/")}
             sx={{
               fontWeight: "700",
               color: localColorTheme.white,
@@ -69,9 +73,8 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4 }}>
             <Typography
-              // onClick={() => router.push("/")}
               sx={{
-                color: localColorTheme.whiteTransparent,
+                color: getColor("/"),
                 fontSize: localFontSize.p4,
                 cursor: "pointer",
               }}
@@ -79,9 +82,8 @@ const Navbar: React.FC = () => {
               Home
             </Typography>
             <Typography
-              // onClick={() => router.push("/about-us")}
               sx={{
-                color: localColorTheme.whiteTransparent,
+                color: getColor("/about-us"),
                 fontSize: localFontSize.p4,
                 cursor: "pointer",
               }}
@@ -89,9 +91,8 @@ const Navbar: React.FC = () => {
               About
             </Typography>
             <Typography
-              // onClick={() => router.push("/contact-us")}
               sx={{
-                color: localColorTheme.whiteTransparent,
+                color: getColor("/contact-us"),
                 fontSize: localFontSize.p4,
                 cursor: "pointer",
               }}
@@ -155,9 +156,8 @@ const Navbar: React.FC = () => {
           }}
         >
           <Typography
-            // onClick={() => router.push("/")}
             sx={{
-              color: localColorTheme.white,
+              color: getColor("/"),
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
@@ -170,11 +170,9 @@ const Navbar: React.FC = () => {
               backgroundColor: localColorTheme.white,
             }}
           />
-
           <Typography
-            // onClick={() => router.push("/about-us")}
             sx={{
-              color: localColorTheme.white,
+              color: getColor("/about-us"),
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
@@ -188,45 +186,14 @@ const Navbar: React.FC = () => {
             }}
           />
           <Typography
-            // onClick={() => router.push("/contact-us")}
             sx={{
-              color: localColorTheme.white,
+              color: getColor("/contact-us"),
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
           >
             Contact
           </Typography>
-          <Divider
-            sx={{
-              width: "100%",
-              backgroundColor: localColorTheme.white,
-            }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              gap: 2,
-              alignItems: "center",
-              margin: "auto",
-            }}
-          >
-            <Image
-              style={{ width: "24px", height: "24px", objectFit: "contain" }}
-              src={svgs.Facebook}
-              alt="facebook"
-            />
-            <Image
-              style={{ width: "24px", height: "24px", objectFit: "contain" }}
-              src={svgs.Twitter}
-              alt="facebook"
-            />
-            <Image
-              style={{ width: "24px", height: "24px", objectFit: "contain" }}
-              src={svgs.Instagram}
-              alt="facebook"
-            />
-          </Box>
         </Box>
       </Drawer>
     </>
