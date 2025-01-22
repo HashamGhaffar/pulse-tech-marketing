@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
@@ -7,8 +7,14 @@ import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
 import pngs from "@/_assets/pngs";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const EmpowerYourBrand: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Box
@@ -30,7 +36,14 @@ const EmpowerYourBrand: React.FC = () => {
             spacing={2}
             alignItems="center"
           >
-            <Grid sx={{ order: { xs: 2, md: 1 } }} item xs={12} md={5}>
+            <Grid
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ order: { xs: 2, md: 1 } }}
+              item
+              xs={12}
+              md={5}
+            >
               <Box sx={{ maxWidth: { xs: "300px", lg: "400px", xl: "500px" } }}>
                 <Image
                   style={{
@@ -43,7 +56,14 @@ const EmpowerYourBrand: React.FC = () => {
                 />
               </Box>
             </Grid>
-            <Grid sx={{ order: { xs: 1, md: 2 } }} item xs={12} md={7}>
+            <Grid
+              data-aos="fade-left"
+              data-aos-duration="500"
+              sx={{ order: { xs: 1, md: 2 } }}
+              item
+              xs={12}
+              md={7}
+            >
               <Box
                 sx={{
                   textAlign: { xs: "center", md: "left" },

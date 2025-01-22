@@ -30,6 +30,8 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
 
   return (
     <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         borderRadius: "30px",
         backgroundClip: "border",

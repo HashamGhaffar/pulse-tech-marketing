@@ -1,13 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const WhyUs: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Box
@@ -31,7 +37,11 @@ const WhyUs: React.FC = () => {
               gap: { xs: "20px", md: "30px", lg: "50px" },
             }}
           >
-            <Box sx={{ width: "fit-content" }}>
+            <Box
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ width: "fit-content" }}
+            >
               <CustomButton
                 text="WHY CHOOSE US"
                 color1="#F093FB"
@@ -50,7 +60,13 @@ const WhyUs: React.FC = () => {
               container
               spacing={2}
             >
-              <Grid item xs={12} md={6}>
+              <Grid
+                data-aos="fade-right"
+                data-aos-duration="500"
+                item
+                xs={12}
+                md={6}
+              >
                 <Typography
                   sx={{
                     fontWeight: "700",
@@ -66,7 +82,13 @@ const WhyUs: React.FC = () => {
                   Why We Stand Out in Digital Marketing Excellence
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                data-aos="fade-left"
+                data-aos-duration="500"
+                item
+                xs={12}
+                md={6}
+              >
                 <Typography
                   sx={{
                     color: localColorTheme.whiteTransparent,
@@ -95,6 +117,8 @@ const WhyUs: React.FC = () => {
             }}
           >
             <Image
+              data-aos="zoom-in"
+              data-aos-duration="500"
               style={{
                 width: "100%",
                 height: "100%",

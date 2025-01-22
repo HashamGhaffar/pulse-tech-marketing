@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ProjectCardProps {
   title: string;
@@ -21,8 +23,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectLink,
   tags,
 }) => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         borderRadius: "20px",
         paddingTop: {

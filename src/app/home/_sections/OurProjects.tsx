@@ -1,12 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import CustomButton from "@/_components/Button";
 import ProjectCard from "../_components/ProjectCard";
 import pngs from "@/_assets/pngs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const OurProjects: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Box
@@ -31,7 +37,11 @@ const OurProjects: React.FC = () => {
               gap: { xs: "20px", md: "50px", lg: "80px", xl: "100px" },
             }}
           >
-            <Box sx={{ width: "fit-content" }}>
+            <Box
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ width: "fit-content" }}
+            >
               <CustomButton
                 text="OUR PROJECTS"
                 color1="#F093FB"
@@ -46,6 +56,8 @@ const OurProjects: React.FC = () => {
               />
             </Box>
             <Typography
+              data-aos="fade-left"
+              data-aos-duration="500"
               sx={{
                 fontWeight: "700",
                 fontSize: localFontSize.h3,
@@ -56,7 +68,7 @@ const OurProjects: React.FC = () => {
               Successes
             </Typography>
           </Box>
-          <Box sx={{}}>
+          <Box>
             <Grid
               sx={{
                 justifyContent: "space-between",

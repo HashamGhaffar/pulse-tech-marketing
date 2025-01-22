@@ -1,16 +1,23 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Grid, Typography, SxProps, Theme } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import CustomButton from "@/_components/Button";
 import pngs from "@/_assets/pngs";
 import Image from "next/image";
 import CustomInput from "@/_components/CustomInput";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface GetInTouchProps {
   styles?: SxProps<Theme>;
 }
 const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Box
@@ -28,6 +35,8 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
       >
         <Box sx={{ maxWidth: "1440px", margin: "auto" }}>
           <Box
+            data-aos="zoom-in"
+            data-aos-duration="500"
             sx={{
               display: "flex",
               alignItems: "flex-start",
@@ -72,7 +81,15 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
             container
             spacing={2}
           >
-            <Grid sx={{ margin: "auto" }} item xs={12} sm={8} md={5.5}>
+            <Grid
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ margin: "auto" }}
+              item
+              xs={12}
+              sm={8}
+              md={5.5}
+            >
               <Box>
                 <Image
                   style={{
@@ -85,7 +102,15 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                 />
               </Box>
             </Grid>
-            <Grid sx={{ margin: "auto" }} item xs={12} sm={8} md={5.5}>
+            <Grid
+              data-aos="fade-left"
+              data-aos-duration="500"
+              sx={{ margin: "auto" }}
+              item
+              xs={12}
+              sm={8}
+              md={5.5}
+            >
               <Box
                 sx={{
                   display: "flex",

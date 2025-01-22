@@ -1,12 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
 import CustomAccordion from "../_components/CustomAccordion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const OurService: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Box
@@ -31,7 +37,11 @@ const OurService: React.FC = () => {
               gap: { xs: "20px", md: "30px", lg: "50px" },
             }}
           >
-            <Box sx={{ width: "fit-content" }}>
+            <Box
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ width: "fit-content" }}
+            >
               <CustomButton
                 text="About Us"
                 color1="#F093FB"
@@ -46,6 +56,8 @@ const OurService: React.FC = () => {
               />
             </Box>
             <Typography
+              data-aos="fade-right"
+              data-aos-duration="500"
               sx={{
                 color: localColorTheme.whiteTransparent,
                 fontSize: localFontSize.p4,
@@ -87,7 +99,11 @@ your number one marketing asset because we live in a digital age."
 a user-friendly experience that drives engagement and growth."
               />
             </Box>
-            <Box sx={{ width: "fit-content" }}>
+            <Box
+              data-aos="fade-right"
+              data-aos-duration="500"
+              sx={{ width: "fit-content" }}
+            >
               <CustomButton text="Let's Talk" />
             </Box>
           </Box>

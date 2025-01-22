@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import { Box, Divider } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
@@ -7,9 +7,16 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import { useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   // const router = useRouter();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -36,6 +43,8 @@ const Navbar: React.FC = () => {
         }}
       >
         <Box
+          data-aos="fade-down"
+          data-aos-duration="500"
           sx={{
             display: "flex",
             justifyContent: "space-between",

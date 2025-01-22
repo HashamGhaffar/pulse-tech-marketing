@@ -4,10 +4,10 @@ import Navbar from "@/_components/Navbar";
 import Hero from "@/_components/Hero";
 import EmpowerYourBrand from "./_sections/EmpowerYourBrand";
 import OurService from "./_sections/OurService";
-// import WhyUs from "./_sections/WhyUs";
-// import OurProjects from "./_sections/OurProjects";
-// import GetInTouch from "@/_components/GetInTouch";
-// import Footer from "@/_components/Footer";
+import WhyUs from "./_sections/WhyUs";
+import OurProjects from "./_sections/OurProjects";
+import GetInTouch from "@/_components/GetInTouch";
+import Footer from "@/_components/Footer";
 import pngs from "@/_assets/pngs";
 
 export default function HomePage() {
@@ -27,10 +27,10 @@ export default function HomePage() {
         />
         <EmpowerYourBrand />
         <OurService />
-        {/* <WhyUs />
+        <WhyUs />
         <OurProjects />
         <GetInTouch />
-        <Footer /> */}
+        <Footer />
       </Box>
     </>
   );

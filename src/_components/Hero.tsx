@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import { Typography } from "@mui/material";
 import CustomButton from "@/_components/Button";
 import Image, { StaticImageData } from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface HeroProps {
   aboutButtonText: string;
@@ -28,6 +30,10 @@ const Hero: React.FC<HeroProps> = ({
   imageAlt,
   showAboutButton = false,
 }) => {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Box
@@ -43,7 +49,13 @@ const Hero: React.FC<HeroProps> = ({
         }}
       >
         <Box sx={{ maxWidth: "1440px", margin: "auto" }}>
-          <Grid container spacing={2} alignItems="center">
+          <Grid
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            container
+            spacing={2}
+            alignItems="center"
+          >
             <Grid item xs={12} md={7}>
               {/* ✅ Conditionally render About Button */}
               {showAboutButton && (

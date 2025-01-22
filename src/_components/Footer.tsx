@@ -5,6 +5,8 @@ import { localColorTheme, localFontSize } from "@/_utils/themes";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 // import { useRouter } from "next/navigation";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer: React.FC = () => {
   // const router = useRouter();
@@ -23,6 +25,11 @@ const Footer: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <Box
       sx={{
@@ -37,6 +44,8 @@ const Footer: React.FC = () => {
         }}
       >
         <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             position: "relative",
             zIndex: "1",
