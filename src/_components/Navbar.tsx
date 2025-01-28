@@ -167,7 +167,13 @@ const Navbar: React.FC = () => {
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => router.push("/")}
+            onClick={() => {
+              if (pathname !== "/") {
+                router.push("/");
+              } else {
+                toggleDrawer(false);
+              }
+            }}
           >
             Home
           </Typography>
@@ -183,7 +189,13 @@ const Navbar: React.FC = () => {
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => router.push("/about-us")}
+            onClick={() => {
+              if (pathname !== "/about-us") {
+                router.push("/about-us");
+              } else {
+                toggleDrawer(false);
+              }
+            }}
           >
             About
           </Typography>
@@ -199,7 +211,13 @@ const Navbar: React.FC = () => {
               fontSize: localFontSize.p4,
               cursor: "pointer",
             }}
-            onClick={() => router.push("/contact-us")}
+            onClick={() => {
+              if (pathname !== "/contact-us") {
+                router.push("/contact-us");
+              } else {
+                toggleDrawer(false);
+              }
+            }}
           >
             Contact
           </Typography>
