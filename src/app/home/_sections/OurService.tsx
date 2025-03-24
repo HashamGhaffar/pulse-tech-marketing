@@ -43,7 +43,7 @@ const OurService: React.FC = () => {
               sx={{ width: "fit-content" }}
             >
               <CustomButton
-                text="About Us"
+                text="Our Services"
                 color1="#F093FB"
                 color2="#F5576C"
                 customStyles={{
@@ -104,7 +104,7 @@ a user-friendly experience that drives engagement and growth."
               data-aos-duration="500"
               sx={{ width: "fit-content" }}
             >
-              <CustomButton text="Let's Talk" />
+              <CustomButton text="Learn More" />
             </Box>
           </Box>
         </Box>

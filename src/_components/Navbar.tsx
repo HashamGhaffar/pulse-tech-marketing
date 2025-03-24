@@ -63,15 +63,16 @@ const Navbar: React.FC = () => {
             margin: "auto",
           }}
         >
-          <Typography
-            sx={{
-              fontWeight: "700",
-              color: localColorTheme.white,
-              fontSize: localFontSize.h4,
-            }}
+          <Box
+            onClick={() => router.push("/")}
+            sx={{ width: { xs: "100px", md: "150px", xl: "230px" } }}
           >
-            LOGO
-          </Typography>
+            <Image
+              style={{ height: "100%", width: "100%", objectFit: "contain" }}
+              src={svgs.Logo}
+              alt="logo"
+            />
+          </Box>
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 4 }}>

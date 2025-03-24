@@ -1,3 +1,4 @@
+import Logo from "./logo.svg";
 import Hamburger from "./hamburger.svg";
 import Facebook from "./facebook.svg";
 import Instagram from "./instagram.svg";
@@ -17,6 +18,7 @@ import Video from "./marketingExpertise/video.svg";
 import WebDesign from "./marketingExpertise/webDesign.svg";
 
 const svgs = {
+  Logo,
   Hamburger,
   Facebook,
   Instagram,

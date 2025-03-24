@@ -117,7 +117,7 @@ const EmpowerYourBrand: React.FC = () => {
                   measurable results.{" "}
                 </Typography>
                 <Box sx={{ width: "fit-content" }}>
-                  <CustomButton text="Let's Talk" />
+                  <CustomButton text="Learn More" />
                 </Box>
               </Box>
             </Grid>

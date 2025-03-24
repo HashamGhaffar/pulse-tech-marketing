@@ -209,7 +209,7 @@ const Footer: React.FC = () => {
               paddingX: "20px",
             }}
           >
-            PulseTechnologySolutions © Copyright 2020, Inc. All rights reserved
+            QashNova © Copyright 2020, Inc. All rights reserved
           </Typography>
         </Box>
       </Box>
