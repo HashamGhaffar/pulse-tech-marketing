@@ -207,9 +207,24 @@ const Footer: React.FC = () => {
               transform: "translateX(-50%)",
               width: "100%",
               paddingX: "20px",
+              "&:hover": {
+                "& span:last-child": {
+                  color: "#323CE6",
+                },
+              },
             }}
           >
-            QashNova © Copyright 2020, Inc. All rights reserved
+            QashNova © Copyright 2020, Inc. All rights reserved{" "}
+            <span
+              style={{
+                fontFamily: '"Poppins", sans-serif',
+                fontWeight: 500,
+                transition: "color 0.3s ease-in-out",
+                fontSize: "inherit",
+              }}
+            >
+              Powered by QashNova
+            </span>
           </Typography>
         </Box>
       </Box>
