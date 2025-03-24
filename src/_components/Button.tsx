@@ -8,16 +8,19 @@ interface ButtonProps {
   customStyles?: SxProps<Theme>;
   color1?: string;
   color2?: string;
+  onClick?: () => void;
 }
 
 const CustomButton: React.FC<ButtonProps> = ({
   text,
   customStyles,
-  color1,
-  color2,
+  color1 = "#74EBD5",
+  color2 = "#9FACE6",
+  onClick,
 }) => {
   return (
     <MUIButton
+      onClick={onClick}
       sx={{
         padding: { xs: "12px 30px", md: "14px 25px", lg: "16px 30px" },
         borderRadius: "10px",

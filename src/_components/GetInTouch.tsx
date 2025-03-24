@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, SxProps, Theme } from "@mui/material";
 import { localColorTheme, localFontSize } from "@/_utils/themes";
 import CustomButton from "@/_components/Button";
@@ -8,18 +8,65 @@ import Image from "next/image";
 import CustomInput from "@/_components/CustomInput";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface GetInTouchProps {
   styles?: SxProps<Theme>;
 }
+
 const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   useEffect(() => {
     AOS.init({ duration: 500, once: true });
     AOS.refresh();
   }, []);
 
+  const handleChange = (field: string, value: string) => {
+    setFormData({ ...formData, [field]: value });
+
+    // Clear errors as user types
+    setErrors({ ...errors, [field]: "" });
+  };
+
+  const handleSubmit = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const newErrors = { name: "", email: "", message: "" };
+
+    if (!formData.name.trim()) newErrors.name = "Please enter your name.";
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email.";
+    } else if (!emailRegex.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!formData.message.trim()) newErrors.message = "Please enter a message.";
+
+    if (newErrors.name || newErrors.email || newErrors.message) {
+      setErrors(newErrors);
+      toast.error("Please fill in all input fields correctly.");
+      return;
+    }
+
+    toast.success("Form submitted successfully!");
+    // Clear form after submission
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <>
+      {" "}
+      <ToastContainer position="top-right" autoClose={3000} />
       <Box
         sx={{
           padding: {
@@ -119,11 +166,53 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                   width: "100%",
                 }}
               >
-                <CustomInput label="Name" type="text" />
-                <CustomInput label="Email" type="email" />
-                <CustomInput label="Message" multiline rows={5} />
+                <CustomInput
+                  label="Name"
+                  type="text"
+                  value={formData.name}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange("name", e.target.value)
+                  }
+                />
+                {errors.name && (
+                  <Typography sx={{ color: "red", fontSize: "14px" }}>
+                    Please enter your name.
+                  </Typography>
+                )}
+
+                <CustomInput
+                  label="Email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange("email", e.target.value)
+                  }
+                />
+                {errors.email && (
+                  <Typography sx={{ color: "red", fontSize: "14px" }}>
+                    {errors.email === "empty"
+                      ? "Please enter your email."
+                      : "Please enter a valid email address."}
+                  </Typography>
+                )}
+
+                <CustomInput
+                  label="Message"
+                  multiline
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleChange("message", e.target.value)
+                  }
+                />
+                {errors.message && (
+                  <Typography sx={{ color: "red", fontSize: "14px" }}>
+                    Please enter a message.
+                  </Typography>
+                )}
+
                 <Box>
-                  <CustomButton text="Get In Touch" />
+                  <CustomButton text="Get In Touch" onClick={handleSubmit} />
                 </Box>
               </Box>
             </Grid>

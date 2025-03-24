@@ -8,6 +8,10 @@ interface CustomInputProps {
   multiline?: boolean;
   rows?: number;
   customStyles?: SxProps<Theme>;
+  value: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: boolean;
+  helperText?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -16,6 +20,10 @@ const CustomInput: React.FC<CustomInputProps> = ({
   multiline = false,
   rows = 4,
   customStyles,
+  value,
+  onChange,
+  error = false,
+  helperText = "",
 }) => {
   return (
     <TextField
@@ -25,22 +33,26 @@ const CustomInput: React.FC<CustomInputProps> = ({
       fullWidth
       multiline={multiline}
       rows={multiline ? rows : 1}
+      value={value}
+      onChange={onChange}
+      error={error}
+      helperText={error ? helperText : ""}
       sx={{
         "& .MuiOutlinedInput-root": {
           borderRadius: "10px",
           color: "#fff",
           "& fieldset": {
-            borderColor: "#FFFFFF",
+            borderColor: error ? "#FF4C4C" : "#FFFFFF",
           },
           "&:hover fieldset": {
-            borderColor: "#FFFFFF",
+            borderColor: error ? "#FF4C4C" : "#FFFFFF",
           },
           "&.Mui-focused fieldset": {
-            borderColor: "#FFFFFF",
+            borderColor: error ? "#FF4C4C" : "#FFFFFF",
           },
         },
         "& .MuiInputLabel-root": {
-          color: "#FFFFFF80",
+          color: error ? "#FF4C4C" : "#FFFFFF80",
         },
         "& .MuiInputBase-input::placeholder": {
           color: "#FFFFFF80",
