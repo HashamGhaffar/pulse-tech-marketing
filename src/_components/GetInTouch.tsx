@@ -36,7 +36,6 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
   const handleChange = (field: string, value: string) => {
     setFormData({ ...formData, [field]: value });
 
-    // Clear errors as user types
     setErrors({ ...errors, [field]: "" });
   };
 
@@ -65,7 +64,6 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
 
   return (
     <>
-      {" "}
       <ToastContainer position="top-right" autoClose={3000} />
       <Box
         sx={{
@@ -83,7 +81,6 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
         <Box sx={{ maxWidth: "1440px", margin: "auto" }}>
           <Box
             data-aos="zoom-in"
-            data-aos-duration="500"
             sx={{
               display: "flex",
               alignItems: "flex-start",
@@ -112,8 +109,7 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                 color: localColorTheme.white,
               }}
             >
-              {`Have Questions? Get in Touch Today and Unlock Your Brand's
-              Potential!`}
+              {`Have Questions? Get in Touch Today and Unlock Your Brand's Potential!`}
             </Typography>
           </Box>
           <Grid
@@ -130,7 +126,6 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
           >
             <Grid
               data-aos="fade-right"
-              data-aos-duration="500"
               sx={{ margin: "auto" }}
               item
               xs={12}
@@ -151,7 +146,6 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
             </Grid>
             <Grid
               data-aos="fade-left"
-              data-aos-duration="500"
               sx={{ margin: "auto" }}
               item
               xs={12}
@@ -166,6 +160,7 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                   width: "100%",
                 }}
               >
+                {/* Name Input */}
                 <CustomInput
                   label="Name"
                   type="text"
@@ -176,10 +171,11 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                 />
                 {errors.name && (
                   <Typography sx={{ color: "red", fontSize: "14px" }}>
-                    Please enter your name.
+                    {errors.name}
                   </Typography>
                 )}
 
+                {/* Email Input */}
                 <CustomInput
                   label="Email"
                   type="email"
@@ -190,12 +186,11 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                 />
                 {errors.email && (
                   <Typography sx={{ color: "red", fontSize: "14px" }}>
-                    {errors.email === "empty"
-                      ? "Please enter your email."
-                      : "Please enter a valid email address."}
+                    {errors.email}
                   </Typography>
                 )}
 
+                {/* Message Input */}
                 <CustomInput
                   label="Message"
                   multiline
@@ -207,10 +202,11 @@ const GetInTouch: React.FC<GetInTouchProps> = ({ styles }) => {
                 />
                 {errors.message && (
                   <Typography sx={{ color: "red", fontSize: "14px" }}>
-                    Please enter a message.
+                    {errors.message}
                   </Typography>
                 )}
 
+                {/* Submit Button */}
                 <Box>
                   <CustomButton text="Get In Touch" onClick={handleSubmit} />
                 </Box>
